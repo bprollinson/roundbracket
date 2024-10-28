@@ -66,28 +66,54 @@ Return value: 5
 
 Arguments: None\
 Return type: int\
-Return value 6
+Return value: 6
 
 ### seven()
 
 Arguments: None\
 Return type: int\
-Return value 7
+Return value: 7
 
 ### eight()
 
 Arguments: None\
 Return type: int\
-Return value 8
+Return value: 8
 
 ### nine()
 
 Arguments: None\
 Return type: int\
-Return value 9
+Return value: 9
 
 ### ten()
 
 Arguments: None\
 Return type: int\
-Return value 10
+Return value: 10
+
+## Integer mathematical methods
+
+### add_int()
+
+Arguments: a: int, b: int\
+Return type: int\
+Return value: a + b
+
+### subtract_int()
+
+Arguments: a: int, b: int\
+Return type: int\
+Return value: a - b
+
+### multiply_int()
+
+Arguments: a: int, b: int\
+Return type: int\
+Return value: a * b
+
+### divide_int()
+
+Arguments: a: int, b: int\
+Retrun type: int\
+Return value: floor(a / b), i.e. the integer component of a / b
