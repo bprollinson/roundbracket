@@ -106,6 +106,26 @@ Arguments: None\
 Return type: int\
 Return value: 10
 
+## Boolean operator methods
+
+### not()
+
+Arguments: a: bool\
+Return type: bool\
+Return value: The boolean negation of a
+
+### and()
+
+Arguments: a: bool, b: bool\
+Return type: bool\
+Return value: true if both a and b are true, otherwise false
+
+### or()
+
+Arguments: a: bool, b: bool\
+Return type: bool\
+Return value: true if at least one of a or b is true, otherwise false
+
 ## Integer mathematical methods
 
 ### add_int()
