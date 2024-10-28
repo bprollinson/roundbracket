@@ -24,6 +24,20 @@ A single character, such as a, 0, or *.
 
 A sequence of characters, such as "", "test", "0123" or "!@#$%".
 
+## Boolean value methods
+
+### true()
+
+Arguments: None\
+Return type: bool\
+Return value: true
+
+### false()
+
+Arguments: None\
+Return type: bool\
+Return value: false
+
 ## Integer value methods
 
 ### zero()
@@ -113,7 +127,7 @@ Return type: int\
 Return value: a * b
 
 ### divide_int()
-
+	
 Arguments: a: int, b: int\
 Retrun type: int\
 Return value: floor(a / b), i.e. the integer component of a / b
