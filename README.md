@@ -151,3 +151,35 @@ Return value: a * b
 Arguments: a: int, b: int\
 Retrun type: int\
 Return value: floor(a / b), i.e. the integer component of a / b
+
+## String operator methods
+
+### empty_str()
+
+Arguments: None\
+Return type: str\
+Return value: The empty string ("")
+
+### str_length()
+
+Arguments: a: str\
+Return type: int\
+Return value: The length of a
+
+### concat_str()
+
+Arguments: a: str, b: str\
+Return type: str\
+Return value: a concatenated with b
+
+### concat_char()
+
+Arguments: a: str, c: char\
+Return type: str\
+Return value: a concatenated with c
+
+#### str_char()
+
+Arguments: a: str, i: int\
+Return type: char\
+return value: The ith character from a
