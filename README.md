@@ -204,7 +204,7 @@ Arguments: a: str, c: char\
 Return type: str\
 Return value: a concatenated with c
 
-#### str_char()
+### str_char()
 
 Arguments: a: str, i: int\
 Return type: char\
