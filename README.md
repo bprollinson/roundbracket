@@ -147,10 +147,36 @@ Return type: int\
 Return value: a * b
 
 ### divide_int()
-	
+
 Arguments: a: int, b: int\
 Retrun type: int\
 Return value: floor(a / b), i.e. the integer component of a / b
+
+## Floating-point mathematical methods
+
+### add_float()
+
+Arguments: a: float, b: float\
+Return type: float\
+Return value: a + b
+
+### subtract_float()
+
+Arguments: a: float, b: float\
+Return type: float\
+Return value: a - b
+
+### multiply_float()
+
+Arguments: a: float, b: float\
+Return type: float\
+Return value: a * b
+
+### divide_float()
+
+Arguments: a: float, b: float\
+Retrun type: float\
+Return value: a / b
 
 ## String operator methods
 
