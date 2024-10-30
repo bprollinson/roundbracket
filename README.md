@@ -121,6 +121,12 @@ Return type: void\
 Return value: N/A\
 Side effects: Stores value in slot slot_num
 
+### is_bool_set()
+
+Arguments: slot_num: int\
+Return type: bool\
+Return value: true if a boolean has been stored in slot slot_num, otherwise false
+
 ### get_int()
 
 Arguments: slot_num: int\
@@ -133,6 +139,12 @@ Arguments: slot_num: int, value: int\
 Return type: N/A\
 Return value: N/A\
 Side effects: Stores value in slot slot_num
+
+### is_int_set()
+
+Arguments: slot_num: int\
+Return type: bool\
+Return value: true if an int has been stored in slot slot_num, otherwise false
 
 ### get_float()
 
@@ -147,6 +159,12 @@ Return type: void\
 Return value: N/A\
 Side effects: Stores value in slot slot_num
 
+### is_float_set()
+
+Arguments: slot_num: int\
+Return type: bool\
+Return value: true if a float has been stored in slot slot_num, otherwise false
+
 ### get_char()
 
 Arguments: slot_num: int\
@@ -160,6 +178,12 @@ Return type: void\
 Return value: N/A\
 Side effects: Stores value in slot slot_num
 
+### is_char_set()
+
+Arguments: slot_num: int\
+Return type: bool\
+Return value: true if a char has been stored in slot slot_num, otherwise false
+
 ### get_string()
 
 Arguments: slot_num: int\
@@ -172,6 +196,12 @@ Arguments: slot_num: int, value: string\
 Return type: void\
 Return value: N/A\
 Side effects: Stores value in slot slot_num
+
+### is_string_set()
+
+Arguments: slot_num: int\
+Return type: bool\
+Return value: true if a string has been stored in slot slot_num, otherwise false
 
 ## Boolean operator methods
 
