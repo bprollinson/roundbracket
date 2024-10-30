@@ -106,6 +106,21 @@ Arguments: None\
 Return type: int\
 Return value: 10
 
+## Variable storage and retrieval methods
+
+### get_int()
+
+Arguments: slot_num: int, value: int\
+Return type: void\
+Return value: N/A\
+Side effects: Stores value in slot slot_num
+
+### set_int()
+
+Arguments: slot_num: int\
+Return type: int\
+Return value: The value previously stored in slot_num
+
 ## Boolean operator methods
 
 ### not()
