@@ -195,6 +195,12 @@ Return value: true if at least one of a or b is true, otherwise false
 
 ## Integer mathematical methods
 
+### minus_int()
+
+Arguments: a: int\
+Return type: int\
+Return value: -a
+
 ### add_int()
 
 Arguments: a: int, b: int\
@@ -220,6 +226,12 @@ Retrun type: int\
 Return value: floor(a / b), i.e. the integer component of a / b
 
 ## Floating-point mathematical methods
+
+### minus_float()
+
+Arguments: a: float\
+Return type: float\
+Return value: -a
 
 ### add_float()
 
