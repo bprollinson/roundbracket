@@ -108,18 +108,70 @@ Return value: 10
 
 ## Variable storage and retrieval methods
 
-### get_int()
+### get_bool()
 
-Arguments: slot_num: int, value: int\
+Arguments: slot_num: int\
+Return type: bool\
+Return value: The value previously stored in slot_num
+
+### set_bool()
+
+Arguments: slot_num: int, value: bool\
 Return type: void\
 Return value: N/A\
 Side effects: Stores value in slot slot_num
 
-### set_int()
+### get_int()
 
 Arguments: slot_num: int\
 Return type: int\
 Return value: The value previously stored in slot_num
+
+### set_int()
+
+Arguments: slot_num: int, value: int\
+Return type: N/A\
+Return value: N/A\
+Side effects: Stores value in slot slot_num
+
+### get_float()
+
+Arguments: slot_num: int\
+Return type: float\
+Return value: The value previously stored in slot_num
+
+### set_float()
+
+Arguments: slot_num: int, value: float\
+Return type: void\
+Return value: N/A\
+Side effects: Stores value in slot slot_num
+
+### get_char()
+
+Arguments: slot_num: int\
+Return type: char\
+Return value: The value previously stored in slot_num
+
+### set_char()
+
+Arguments: slot_num: int, value: char\
+Return type: void\
+Return value: N/A\
+Side effects: Stores value in slot slot_num
+
+### get_string()
+
+Arguments: slot_num: int\
+Return type: string\
+Return value: The value previously stored in slot_num
+
+### set_string()
+
+Arguments: slot_num: int, value: string\
+Return type: void\
+Return value: N/A\
+Side effects: Stores value in slot slot_num
 
 ## Boolean operator methods
 
