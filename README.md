@@ -318,3 +318,33 @@ Return value: a concatenated with c
 Arguments: a: str, i: int\
 Return type: char\
 return value: The ith character from a
+
+## Program flow methods
+
+### if()
+
+Arguments: b: bool\
+Return type: N/A\
+Return value: N/A\
+Side effects: Begins the if control flow, executing the subsequent block if b is true or jumping to else_if / else / end_if if b is false
+
+### else_if()
+
+Arguments: b: bool\
+Return type: N/A\
+Return value: N/A\
+Side effects: Continues the control flow from the previous if or else_if method, executing the subsequent block if b is true or jumping to the next else_if / else / end_if if b is false
+
+### else()
+
+Arguments: b: bool\
+Return type: N/A\
+Return value: N/A\
+Side effects: Continues the control flow from the previous if or else_if method, executing the subsquent block if b is true or jumping to to the next else_if / else / end_if if b is false
+
+### end_if()
+
+Arguments: b: None\
+Return type: N/A\
+Return value: N/A\
+Side effects: Continues the control flow from the previous if, else_if or else method
