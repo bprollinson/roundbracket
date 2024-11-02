@@ -349,14 +349,14 @@ Return type: N/A\
 Return value: N/A\
 Side effects: Continues the control flow from the previous if, else_if or else method
 
-### while
+### while()
 
 Arguments: b: bool\
 Return type N/A\
 Return value: N/A\
 Side effects: Begins the while control flow, executing the subsequent block if b is true or jumping to end_while if b is false
 
-### end_while
+### end_while()
 
 Arguments: b: bool\
 Return type: N/A\
