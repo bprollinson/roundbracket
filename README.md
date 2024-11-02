@@ -205,23 +205,61 @@ Return value: true if a string has been stored in slot slot_num, otherwise false
 
 ## Type conversion methods
 
-### int_to_float
+### int_to_float()
 
-### int_to_string
+Arguments: i: int\
+Return type: float\
+Return value: i as a float
 
-### float_to_string
+### int_to_string()
 
-### char_to_int
+Arguments: i: int\
+Return type: string\
+Return value: i as a string
 
-### char_to_string
+### float_to_string()
 
-### str_is_int
+Arguments: f: float\
+Return type: string\
+Return value: f as a string
 
-### str_to_int
+### char_to_int()
 
-### str_is_float
+Arguments: c: char\
+Return type: int\
+Return value: The ascii value of c
 
-### str_to_float
+### char_to_string()
+
+Arguments: c: char\
+Return type: string\
+Return value: c as a string
+
+### string_is_int()
+
+Arguments: s: string\
+Return type: bool\
+Return value: true if s is an integer string, false otherwise
+
+### string_to_int()
+
+Arguments: s: string\
+Return type: int\
+Return value: s as an integer\
+Side effects: Generates an error if s is not an integer string
+
+### string_is_float()
+
+Arguments: s: string\
+Return type: bool\
+Return value: true if s is a float string, false otherwise
+
+### string_to_float()
+
+Arguments: s: string\
+Return type: float\
+Return value: s as a float\
+Side effects: Generates an error if s is not a float strings
 
 ## Boolean operator methods
 
