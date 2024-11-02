@@ -203,6 +203,26 @@ Arguments: slot_num: int\
 Return type: bool\
 Return value: true if a string has been stored in slot slot_num, otherwise false
 
+## Type conversion methods
+
+### int_to_float
+
+### int_to_string
+
+### float_to_string
+
+### char_to_int
+
+### char_to_string
+
+### str_is_int
+
+### str_to_int
+
+### str_is_float
+
+### str_to_float
+
 ## Boolean operator methods
 
 ### not()
