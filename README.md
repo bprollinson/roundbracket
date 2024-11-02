@@ -337,14 +337,14 @@ Side effects: Continues the control flow from the previous if or else_if method,
 
 ### else()
 
-Arguments: b: bool\
+Arguments: None\
 Return type: N/A\
 Return value: N/A\
 Side effects: Continues the control flow from the previous if or else_if method, executing the subsquent block if b is true or jumping to to the next else_if / else / end_if if b is false
 
 ### end_if()
 
-Arguments: b: None\
+Arguments: None\
 Return type: N/A\
 Return value: N/A\
 Side effects: Continues the control flow from the previous if, else_if or else method
@@ -358,7 +358,7 @@ Side effects: Begins the while control flow, executing the subsequent block if b
 
 ### end_while()
 
-Arguments: b: bool\
+Arguments: None\
 Return type: N/A\
 Return value: N/A\
 Side effects: Continues the control flow from the previous while method
