@@ -342,8 +342,26 @@ Return value: a * b
 ### divide_float()
 
 Arguments: a: float, b: float\
-Retrun type: float\
+Return type: float\
 Return value: a / b
+
+### floor()
+
+Arguments: a: float\
+Return type: int\
+Return value: The largest int no greater than a
+
+### round()
+
+Arguments: a: float\
+Return type: int\
+Return value: The integer closest to a, rounding on conflict
+
+### ceiling()
+
+Arguments: a: float\
+Return type: int\
+Return value: The largest int no less than a
 
 ## String operator methods
 
