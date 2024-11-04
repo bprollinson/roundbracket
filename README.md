@@ -438,3 +438,19 @@ Arguments: None\
 Return type: N/A\
 Return value: N/A\
 Side effects: Continues the control flow from the previous while method
+
+## Input / Output
+
+### print_string()
+
+Arguments: s: str\
+Return type: N/A\
+Return value: N/A\
+Side effects: Renders a string to standard out
+
+### read_string()
+
+Arguments: slot_num: int\
+Return type: N/A\
+Return value: N/A\
+Side effects: Reads a string from standard in into string slot slot_num
