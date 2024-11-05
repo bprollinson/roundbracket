@@ -112,96 +112,96 @@ Return value: 10
 
 Arguments: slot_num: int\
 Return type: bool\
-Return value: The value previously stored in slot_num
+Return value: The value previously stored in bool slot slot_num
 
 ### set_bool()
 
 Arguments: slot_num: int, value: bool\
 Return type: void\
 Return value: N/A\
-Side effects: Stores value in slot slot_num
+Side effects: Stores value in bool slot slot_num
 
 ### bool_is_set()
 
 Arguments: slot_num: int\
 Return type: bool\
-Return value: true if a boolean has been stored in slot slot_num, otherwise false
+Return value: true if a value has been stored in bool slot slot_num, otherwise false
 
 ### get_int()
 
 Arguments: slot_num: int\
 Return type: int\
-Return value: The value previously stored in slot_num
+Return value: The value previously stored in int slot_num
 
 ### set_int()
 
 Arguments: slot_num: int, value: int\
 Return type: N/A\
 Return value: N/A\
-Side effects: Stores value in slot slot_num
+Side effects: Stores value in int slot slot_num
 
 ### int_is_set()
 
 Arguments: slot_num: int\
 Return type: bool\
-Return value: true if an int has been stored in slot slot_num, otherwise false
+Return value: true if a value has been stored in int slot slot_num, otherwise false
 
 ### get_float()
 
 Arguments: slot_num: int\
 Return type: float\
-Return value: The value previously stored in slot_num
+Return value: The value previously stored in float slot slot_num
 
 ### set_float()
 
 Arguments: slot_num: int, value: float\
 Return type: void\
 Return value: N/A\
-Side effects: Stores value in slot slot_num
+Side effects: Stores value in float slot slot_num
 
 ### float_is_set()
 
 Arguments: slot_num: int\
 Return type: bool\
-Return value: true if a float has been stored in slot slot_num, otherwise false
+Return value: true if a value has been stored in float slot slot_num, otherwise false
 
 ### get_char()
 
 Arguments: slot_num: int\
 Return type: char\
-Return value: The value previously stored in slot_num
+Return value: The value previously stored in char slot slot_num
 
 ### set_char()
 
 Arguments: slot_num: int, value: char\
 Return type: void\
 Return value: N/A\
-Side effects: Stores value in slot slot_num
+Side effects: Stores value in char slot slot_num
 
 ### char_is_set()
 
 Arguments: slot_num: int\
 Return type: bool\
-Return value: true if a char has been stored in slot slot_num, otherwise false
+Return value: true if a value has been stored in char slot slot_num, otherwise false
 
 ### get_string()
 
 Arguments: slot_num: int\
 Return type: string\
-Return value: The value previously stored in slot_num
+Return value: The value previously stored in string slot_num
 
 ### set_string()
 
 Arguments: slot_num: int, value: string\
 Return type: void\
 Return value: N/A\
-Side effects: Stores value in slot slot_num
+Side effects: Stores value in string slot slot_num
 
 ### string_is_set()
 
 Arguments: slot_num: int\
 Return type: bool\
-Return value: true if a string has been stored in slot slot_num, otherwise false
+Return value: true if a value has been stored in string slot slot_num, otherwise false
 
 ## Type conversion methods
 
