@@ -8,6 +8,8 @@ public class TokenizerTest
     @Test
     public void testBogus()
     {
+        Tokenizer tokenizer = new Tokenizer();
+
         assertTrue(false);
     }
 }
