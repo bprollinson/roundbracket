@@ -3,6 +3,7 @@ package roundbracket.tokenizer;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+import roundbracket.token.CloseParenToken;
 import roundbracket.token.OpenParenToken;
 import roundbracket.token.Token;
 
@@ -20,6 +21,18 @@ public class TokenizerTest
         List<Token> expectedTokens = new ArrayList<Token>();
         expectedTokens.add(new OpenParenToken());
 
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesCloseParenthesis()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize(")");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new CloseParenToken());
+ 
         assertEquals(expectedTokens, tokens);
     }
 }
