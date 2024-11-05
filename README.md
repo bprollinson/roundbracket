@@ -136,7 +136,7 @@ Return value: The value previously stored in int slot_num
 ### set_int()
 
 Arguments: slot_num: int, value: int\
-Return type: N/A\
+Return type: void\
 Return value: N/A\
 Side effects: Stores value in int slot slot_num
 
@@ -400,28 +400,28 @@ return value: The ith character from a
 ### if()
 
 Arguments: b: bool\
-Return type: N/A\
+Return type: void\
 Return value: N/A\
 Side effects: Begins the if control flow, executing the subsequent block if b is true or jumping to else_if / else / end_if if b is false
 
 ### else_if()
 
 Arguments: b: bool\
-Return type: N/A\
+Return type: void\
 Return value: N/A\
 Side effects: Continues the control flow from the previous if or else_if method, executing the subsequent block if b is true or jumping to the next else_if / else / end_if if b is false
 
 ### else()
 
 Arguments: None\
-Return type: N/A\
+Return type: void\
 Return value: N/A\
 Side effects: Continues the control flow from the previous if or else_if method, executing the subsquent block if b is true or jumping to to the next else_if / else / end_if if b is false
 
 ### end_if()
 
 Arguments: None\
-Return type: N/A\
+Return type: void\
 Return value: N/A\
 Side effects: Continues the control flow from the previous if, else_if or else method
 
@@ -435,7 +435,7 @@ Side effects: Begins the while control flow, executing the subsequent block if b
 ### end_while()
 
 Arguments: None\
-Return type: N/A\
+Return type: void\
 Return value: N/A\
 Side effects: Continues the control flow from the previous while method
 
@@ -444,13 +444,13 @@ Side effects: Continues the control flow from the previous while method
 ### print_string()
 
 Arguments: s: str\
-Return type: N/A\
+Return type: void\
 Return value: N/A\
 Side effects: Renders a string to standard out
 
 ### read_string()
 
 Arguments: slot_num: int\
-Return type: N/A\
+Return type: void\
 Return value: N/A\
 Side effects: Reads a string from standard in into string slot slot_num
