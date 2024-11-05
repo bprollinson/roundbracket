@@ -313,6 +313,12 @@ Arguments: a: int, b: int\
 Retrun type: int\
 Return value: floor(a / b), i.e. the integer component of a / b
 
+### mod_int()
+
+Arguments: a: int, b:int\
+Return type: int\
+Return value: a mod b, i.e. the integer remainder of a / b
+
 ## Floating-point mathematical methods
 
 ### minus_float()
