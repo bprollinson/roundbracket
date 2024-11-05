@@ -112,7 +112,8 @@ Return value: 10
 
 Arguments: slot_num: int\
 Return type: bool\
-Return value: The value previously stored in bool slot slot_num
+Return value: The value previously stored in bool slot slot_num\
+Side effects: Generates an error if bool slot slot_num is not populated
 
 ### set_bool()
 
@@ -131,7 +132,8 @@ Return value: true if a value has been stored in bool slot slot_num, otherwise f
 
 Arguments: slot_num: int\
 Return type: int\
-Return value: The value previously stored in int slot_num
+Return value: The value previously stored in int slot_num\
+Side effects: Generates an error if int slot slot_num is not populated
 
 ### set_int()
 
@@ -150,7 +152,8 @@ Return value: true if a value has been stored in int slot slot_num, otherwise fa
 
 Arguments: slot_num: int\
 Return type: float\
-Return value: The value previously stored in float slot slot_num
+Return value: The value previously stored in float slot slot_num\
+Side effects: Generates an error if float slot slot_num is not populated
 
 ### set_float()
 
@@ -169,7 +172,8 @@ Return value: true if a value has been stored in float slot slot_num, otherwise 
 
 Arguments: slot_num: int\
 Return type: char\
-Return value: The value previously stored in char slot slot_num
+Return value: The value previously stored in char slot slot_num\
+Side effects: Generates an error if char slot slot_num is not populated
 
 ### set_char()
 
@@ -188,7 +192,8 @@ Return value: true if a value has been stored in char slot slot_num, otherwise f
 
 Arguments: slot_num: int\
 Return type: string\
-Return value: The value previously stored in string slot_num
+Return value: The value previously stored in string slot_num\
+Side effects: Generates an error if string slot slot_num is not populated
 
 ### set_string()
 
@@ -210,6 +215,19 @@ Return value: true if a value has been stored in string slot slot_num, otherwise
 Arguments: i: int\
 Return type: float\
 Return value: i as a float
+
+### int_is_char()
+
+arguments: i: int\
+Return type: bool\
+Return value: true if i is in char range, false otherwise
+
+### int_to_char()
+
+Arguments: i: int\
+Return type: char\
+Return value: i as a char\
+Side effects: Generates an error if i is out of char range
 
 ### int_to_string()
 
@@ -311,13 +329,15 @@ Return value: a * b
 
 Arguments: a: int, b: int\
 Retrun type: int\
-Return value: floor(a / b), i.e. the integer component of a / b
+Return value: floor(a / b), i.e. the integer component of a / b\
+Side effects: Generates an error if b is 0
 
 ### mod_int()
 
 Arguments: a: int, b:int\
 Return type: int\
-Return value: a mod b, i.e. the integer remainder of a / b
+Return value: a mod b, i.e. the integer remainder of a / b\
+Side effects: Generates an error if b is 0
 
 ## Floating-point mathematical methods
 
@@ -349,7 +369,8 @@ Return value: a * b
 
 Arguments: a: float, b: float\
 Return type: float\
-Return value: a / b
+Return value: a / b\
+Side effects: Generates an error if b is 0
 
 ### floor()
 
