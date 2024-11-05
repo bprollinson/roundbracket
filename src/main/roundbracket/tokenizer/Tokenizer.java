@@ -1,5 +1,6 @@
 package roundbracket.tokenizer;
 
+import roundbracket.token.CloseParenToken;
 import roundbracket.token.OpenParenToken;
 import roundbracket.token.Token;
 
@@ -11,7 +12,14 @@ public class Tokenizer
     public List<Token> tokenize(String input)
     {
         List<Token> tokenList = new ArrayList<Token>();
-        tokenList.add(new OpenParenToken());
+        if (input.equals("("))
+        {
+            tokenList.add(new OpenParenToken());
+        }
+        else
+        {
+            tokenList.add(new CloseParenToken());
+        }
 
         return tokenList;
     }
