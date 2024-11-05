@@ -121,7 +121,7 @@ Return type: void\
 Return value: N/A\
 Side effects: Stores value in slot slot_num
 
-### is_bool_set()
+### bool_is_set()
 
 Arguments: slot_num: int\
 Return type: bool\
@@ -140,7 +140,7 @@ Return type: N/A\
 Return value: N/A\
 Side effects: Stores value in slot slot_num
 
-### is_int_set()
+### int_is_set()
 
 Arguments: slot_num: int\
 Return type: bool\
@@ -159,7 +159,7 @@ Return type: void\
 Return value: N/A\
 Side effects: Stores value in slot slot_num
 
-### is_float_set()
+### float_is_set()
 
 Arguments: slot_num: int\
 Return type: bool\
@@ -178,7 +178,7 @@ Return type: void\
 Return value: N/A\
 Side effects: Stores value in slot slot_num
 
-### is_char_set()
+### char_is_set()
 
 Arguments: slot_num: int\
 Return type: bool\
@@ -197,7 +197,7 @@ Return type: void\
 Return value: N/A\
 Side effects: Stores value in slot slot_num
 
-### is_string_set()
+### string_is_set()
 
 Arguments: slot_num: int\
 Return type: bool\
