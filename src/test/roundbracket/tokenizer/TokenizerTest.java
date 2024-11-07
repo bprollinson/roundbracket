@@ -35,4 +35,19 @@ public class TokenizerTest
  
         assertEquals(expectedTokens, tokens);
     }
+
+    @Test
+    public void testTokenizeTokenizesCloseMultipleParentheses()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("(())");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new OpenParenToken());
+        expectedTokens.add(new OpenParenToken());
+        expectedTokens.add(new CloseParenToken());
+        expectedTokens.add(new CloseParenToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
 }
