@@ -4,21 +4,21 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
-public class OpenParenTokenTest
+public class CloseParenTokenTest
 {
     @Test
     public void testEqualsReturnsTrueForTokenWithSameClass()
     {
-        OpenParenToken token = new OpenParenToken();
+        CloseParenToken token = new CloseParenToken();
 
-        assertTrue(token.equals(new OpenParenToken()));
+        assertTrue(token.equals(new CloseParenToken()));
     }
 
     @Test
     public void testEqualsReturnsFalseForTokenWithDifferentClass()
     {
-        OpenParenToken token = new OpenParenToken();
+        CloseParenToken token = new CloseParenToken();
 
-        assertFalse(token.equals(new CloseParenToken()));
+        assertFalse(token.equals(new OpenParenToken()));
     }
 }
