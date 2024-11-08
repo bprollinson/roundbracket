@@ -13,6 +13,17 @@ import java.util.List;
 public class TokenizerTest
 {
     @Test
+    public void testTokenizeTokenizesEmptyString()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("");
+        List<Token> expectedTokens = new ArrayList<Token>();
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
     public void testTokenizeTokenizesOpenParenthesis()
     {
         Tokenizer tokenizer = new Tokenizer();
