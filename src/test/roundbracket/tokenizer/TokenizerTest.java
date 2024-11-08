@@ -48,7 +48,7 @@ public class TokenizerTest
     }
 
     @Test
-    public void testTokenizeTokenizesCloseMultipleParentheses()
+    public void testTokenizeTokenizesMultipleParentheses()
     {
         Tokenizer tokenizer = new Tokenizer();
 
