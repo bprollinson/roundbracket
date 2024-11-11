@@ -46,6 +46,13 @@ public class Tokenizer
             }
         }
 
+        this.parseMultiCharacterToken(buffer, tokenList);
+
+        return tokenList;
+    }
+
+    private void parseMultiCharacterToken(String buffer, List<Token> tokenList)
+    {
         if (buffer.length() > 0)
         {
             switch (buffer)
@@ -91,7 +98,5 @@ public class Tokenizer
                     break;
             }
         }
-
-        return tokenList;
     }
 }
