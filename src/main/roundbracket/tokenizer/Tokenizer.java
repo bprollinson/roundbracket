@@ -1,15 +1,30 @@
 package roundbracket.tokenizer;
 
+import roundbracket.token.BoolIsSetToken;
+import roundbracket.token.CharIsSetToken;
 import roundbracket.token.CloseParenToken;
 import roundbracket.token.EightToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
+import roundbracket.token.FloatIsSetToken;
 import roundbracket.token.FourToken;
+import roundbracket.token.GetBoolToken;
+import roundbracket.token.GetCharToken;
+import roundbracket.token.GetFloatToken;
+import roundbracket.token.GetIntToken;
+import roundbracket.token.GetStringToken;
+import roundbracket.token.IntIsSetToken;
 import roundbracket.token.NineToken;
 import roundbracket.token.OneToken;
 import roundbracket.token.OpenParenToken;
+import roundbracket.token.SetBoolToken;
+import roundbracket.token.SetCharToken;
+import roundbracket.token.SetFloatToken;
+import roundbracket.token.SetIntToken;
+import roundbracket.token.SetStringToken;
 import roundbracket.token.SevenToken;
 import roundbracket.token.SixToken;
+import roundbracket.token.StringIsSetToken;
 import roundbracket.token.TenToken;
 import roundbracket.token.ThreeToken;
 import roundbracket.token.Token;
@@ -93,8 +108,53 @@ public class Tokenizer
                 case "nine":
                     tokenList.add(new NineToken());
                     break;
-                default:
+                case "ten":
                     tokenList.add(new TenToken());
+                    break;
+                case "get_bool":
+                    tokenList.add(new GetBoolToken());
+                    break;
+                case "set_bool":
+                    tokenList.add(new SetBoolToken());
+                    break;
+                case "bool_is_set":
+                    tokenList.add(new BoolIsSetToken());
+                    break;
+                case "get_int":
+                    tokenList.add(new GetIntToken());
+                    break;
+                case "set_int":
+                    tokenList.add(new SetIntToken());
+                    break;
+                case "int_is_set":
+                    tokenList.add(new IntIsSetToken());
+                    break;
+                case "get_float":
+                    tokenList.add(new GetFloatToken());
+                    break;
+                case "set_float":
+                    tokenList.add(new SetFloatToken());
+                    break;
+                case "float_is_set":
+                    tokenList.add(new FloatIsSetToken());
+                    break;
+                case "get_char":
+                    tokenList.add(new GetCharToken());
+                    break;
+                case "set_char":
+                    tokenList.add(new SetCharToken());
+                    break;
+                case "char_is_set":
+                    tokenList.add(new CharIsSetToken());
+                    break;
+                case "get_string":
+                    tokenList.add(new GetStringToken());
+                    break;
+                case "set_string":
+                    tokenList.add(new SetStringToken());
+                    break;
+                default:
+                    tokenList.add(new StringIsSetToken());
                     break;
             }
         }
