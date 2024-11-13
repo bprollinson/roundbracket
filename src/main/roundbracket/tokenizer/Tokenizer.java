@@ -2,18 +2,25 @@ package roundbracket.tokenizer;
 
 import roundbracket.token.BoolIsSetToken;
 import roundbracket.token.CharIsSetToken;
+import roundbracket.token.CharToIntToken;
+import roundbracket.token.CharToStringToken;
 import roundbracket.token.CloseParenToken;
 import roundbracket.token.EightToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
 import roundbracket.token.FloatIsSetToken;
+import roundbracket.token.FloatToStringToken;
 import roundbracket.token.FourToken;
 import roundbracket.token.GetBoolToken;
 import roundbracket.token.GetCharToken;
 import roundbracket.token.GetFloatToken;
 import roundbracket.token.GetIntToken;
 import roundbracket.token.GetStringToken;
+import roundbracket.token.IntIsCharToken;
 import roundbracket.token.IntIsSetToken;
+import roundbracket.token.IntToCharToken;
+import roundbracket.token.IntToFloatToken;
+import roundbracket.token.IntToStringToken;
 import roundbracket.token.NineToken;
 import roundbracket.token.OneToken;
 import roundbracket.token.OpenParenToken;
@@ -24,7 +31,11 @@ import roundbracket.token.SetIntToken;
 import roundbracket.token.SetStringToken;
 import roundbracket.token.SevenToken;
 import roundbracket.token.SixToken;
+import roundbracket.token.StringIsFloatToken;
+import roundbracket.token.StringIsIntToken;
 import roundbracket.token.StringIsSetToken;
+import roundbracket.token.StringToFloatToken;
+import roundbracket.token.StringToIntToken;
 import roundbracket.token.TenToken;
 import roundbracket.token.ThreeToken;
 import roundbracket.token.Token;
@@ -153,8 +164,41 @@ public class Tokenizer
                 case "set_string":
                     tokenList.add(new SetStringToken());
                     break;
-                default:
+                case "string_is_set":
                     tokenList.add(new StringIsSetToken());
+                    break;
+                case "int_to_float":
+                    tokenList.add(new IntToFloatToken());
+                    break;
+                case "int_is_char":
+                    tokenList.add(new IntIsCharToken());
+                    break;
+                case "int_to_char":
+                    tokenList.add(new IntToCharToken());
+                    break;
+                case "int_to_string":
+                    tokenList.add(new IntToStringToken());
+                    break;
+                case "float_to_string":
+                    tokenList.add(new FloatToStringToken());
+                    break;
+                case "char_to_int":
+                    tokenList.add(new CharToIntToken());
+                    break;
+                case "char_to_string":
+                    tokenList.add(new CharToStringToken());
+                    break;
+                case "string_is_int":
+                    tokenList.add(new StringIsIntToken());
+                    break;
+                case "string_to_int":
+                    tokenList.add(new StringToIntToken());
+                    break;
+                case "string_is_float":
+                    tokenList.add(new StringIsFloatToken());
+                    break;
+                default:
+                    tokenList.add(new StringToFloatToken());
                     break;
             }
         }
