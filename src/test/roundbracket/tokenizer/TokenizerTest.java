@@ -5,18 +5,25 @@ import org.junit.jupiter.api.Test;
 
 import roundbracket.token.BoolIsSetToken;
 import roundbracket.token.CharIsSetToken;
+import roundbracket.token.CharToIntToken;
+import roundbracket.token.CharToStringToken;
 import roundbracket.token.CloseParenToken;
 import roundbracket.token.EightToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
 import roundbracket.token.FloatIsSetToken;
+import roundbracket.token.FloatToStringToken;
 import roundbracket.token.FourToken;
 import roundbracket.token.GetBoolToken;
 import roundbracket.token.GetCharToken;
 import roundbracket.token.GetFloatToken;
 import roundbracket.token.GetIntToken;
 import roundbracket.token.GetStringToken;
+import roundbracket.token.IntIsCharToken;
 import roundbracket.token.IntIsSetToken;
+import roundbracket.token.IntToCharToken;
+import roundbracket.token.IntToFloatToken;
+import roundbracket.token.IntToStringToken;
 import roundbracket.token.NineToken;
 import roundbracket.token.OneToken;
 import roundbracket.token.OpenParenToken;
@@ -27,7 +34,11 @@ import roundbracket.token.SetIntToken;
 import roundbracket.token.SetStringToken;
 import roundbracket.token.SevenToken;
 import roundbracket.token.SixToken;
+import roundbracket.token.StringIsIntToken;
 import roundbracket.token.StringIsSetToken;
+import roundbracket.token.StringIsFloatToken;
+import roundbracket.token.StringToFloatToken;
+import roundbracket.token.StringToIntToken;
 import roundbracket.token.TenToken;
 import roundbracket.token.ThreeToken;
 import roundbracket.token.Token;
@@ -407,6 +418,138 @@ public class TokenizerTest
         List<Token> tokens = tokenizer.tokenize("string_is_set");
         List<Token> expectedTokens = new ArrayList<Token>();
         expectedTokens.add(new StringIsSetToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesIntToFloat()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("int_to_float");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new IntToFloatToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesIntIsChar()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("int_is_char");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new IntIsCharToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesIntToChar()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("int_to_char");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new IntToCharToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesIntToString()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("int_to_string");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new IntToStringToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesFloatToString()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("float_to_string");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new FloatToStringToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesCharToInt()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("char_to_int");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new CharToIntToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesCharToString()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("char_to_string");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new CharToStringToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesStringIsInt()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("string_is_int");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new StringIsIntToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesStringToInt()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("string_to_int");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new StringToIntToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesStringIsFloat()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("string_is_float");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new StringIsFloatToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesStringToFloat()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("string_to_float");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new StringToFloatToken());
 
         assertEquals(expectedTokens, tokens);
     }
