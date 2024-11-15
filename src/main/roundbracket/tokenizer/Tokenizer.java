@@ -1,11 +1,13 @@
 package roundbracket.tokenizer;
 
+import roundbracket.token.AddIntToken;
 import roundbracket.token.AndToken;
 import roundbracket.token.BoolIsSetToken;
 import roundbracket.token.CharIsSetToken;
 import roundbracket.token.CharToIntToken;
 import roundbracket.token.CharToStringToken;
 import roundbracket.token.CloseParenToken;
+import roundbracket.token.DivideIntToken;
 import roundbracket.token.EightToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
@@ -22,6 +24,9 @@ import roundbracket.token.IntIsSetToken;
 import roundbracket.token.IntToCharToken;
 import roundbracket.token.IntToFloatToken;
 import roundbracket.token.IntToStringToken;
+import roundbracket.token.MinusIntToken;
+import roundbracket.token.ModIntToken;
+import roundbracket.token.MultiplyIntToken;
 import roundbracket.token.NineToken;
 import roundbracket.token.NotToken;
 import roundbracket.token.OneToken;
@@ -39,6 +44,7 @@ import roundbracket.token.StringIsIntToken;
 import roundbracket.token.StringIsSetToken;
 import roundbracket.token.StringToFloatToken;
 import roundbracket.token.StringToIntToken;
+import roundbracket.token.SubtractIntToken;
 import roundbracket.token.TenToken;
 import roundbracket.token.ThreeToken;
 import roundbracket.token.Token;
@@ -209,8 +215,26 @@ public class Tokenizer
                 case "or":
                     tokenList.add(new OrToken());
                     break;
-                default:
+                case "not":
                     tokenList.add(new NotToken());
+                    break;
+                case "minus_int":
+                    tokenList.add(new MinusIntToken());
+                    break;
+                case "add_int":
+                    tokenList.add(new AddIntToken());
+                    break;
+                case "subtract_int":
+                    tokenList.add(new SubtractIntToken());
+                    break;
+                case "multiply_int":
+                    tokenList.add(new MultiplyIntToken());
+                    break;
+                case "divide_int":
+                    tokenList.add(new DivideIntToken());
+                    break;
+                case "mod_int":
+                    tokenList.add(new ModIntToken());
                     break;
             }
         }
