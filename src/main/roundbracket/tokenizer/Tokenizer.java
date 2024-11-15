@@ -1,5 +1,6 @@
 package roundbracket.tokenizer;
 
+import roundbracket.token.AndToken;
 import roundbracket.token.BoolIsSetToken;
 import roundbracket.token.CharIsSetToken;
 import roundbracket.token.CharToIntToken;
@@ -22,8 +23,10 @@ import roundbracket.token.IntToCharToken;
 import roundbracket.token.IntToFloatToken;
 import roundbracket.token.IntToStringToken;
 import roundbracket.token.NineToken;
+import roundbracket.token.NotToken;
 import roundbracket.token.OneToken;
 import roundbracket.token.OpenParenToken;
+import roundbracket.token.OrToken;
 import roundbracket.token.SetBoolToken;
 import roundbracket.token.SetCharToken;
 import roundbracket.token.SetFloatToken;
@@ -197,8 +200,17 @@ public class Tokenizer
                 case "string_is_float":
                     tokenList.add(new StringIsFloatToken());
                     break;
-                default:
+                case "string_to_float":
                     tokenList.add(new StringToFloatToken());
+                    break;
+                case "and":
+                    tokenList.add(new AndToken());
+                    break;
+                case "or":
+                    tokenList.add(new OrToken());
+                    break;
+                default:
+                    tokenList.add(new NotToken());
                     break;
             }
         }
