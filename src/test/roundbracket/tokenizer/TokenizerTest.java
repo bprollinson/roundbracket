@@ -3,6 +3,7 @@ package roundbracket.tokenizer;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+import roundbracket.token.AndToken;
 import roundbracket.token.BoolIsSetToken;
 import roundbracket.token.CharIsSetToken;
 import roundbracket.token.CharToIntToken;
@@ -25,8 +26,10 @@ import roundbracket.token.IntToCharToken;
 import roundbracket.token.IntToFloatToken;
 import roundbracket.token.IntToStringToken;
 import roundbracket.token.NineToken;
+import roundbracket.token.NotToken;
 import roundbracket.token.OneToken;
 import roundbracket.token.OpenParenToken;
+import roundbracket.token.OrToken;
 import roundbracket.token.SetBoolToken;
 import roundbracket.token.SetCharToken;
 import roundbracket.token.SetFloatToken;
@@ -550,6 +553,42 @@ public class TokenizerTest
         List<Token> tokens = tokenizer.tokenize("string_to_float");
         List<Token> expectedTokens = new ArrayList<Token>();
         expectedTokens.add(new StringToFloatToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesNot()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("not");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new NotToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesAnd()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("and");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new AndToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesOr()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("or");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new OrToken());
 
         assertEquals(expectedTokens, tokens);
     }
