@@ -3,12 +3,14 @@ package roundbracket.tokenizer;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+import roundbracket.token.AddIntToken;
 import roundbracket.token.AndToken;
 import roundbracket.token.BoolIsSetToken;
 import roundbracket.token.CharIsSetToken;
 import roundbracket.token.CharToIntToken;
 import roundbracket.token.CharToStringToken;
 import roundbracket.token.CloseParenToken;
+import roundbracket.token.DivideIntToken;
 import roundbracket.token.EightToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
@@ -25,6 +27,9 @@ import roundbracket.token.IntIsSetToken;
 import roundbracket.token.IntToCharToken;
 import roundbracket.token.IntToFloatToken;
 import roundbracket.token.IntToStringToken;
+import roundbracket.token.MinusIntToken;
+import roundbracket.token.ModIntToken;
+import roundbracket.token.MultiplyIntToken;
 import roundbracket.token.NineToken;
 import roundbracket.token.NotToken;
 import roundbracket.token.OneToken;
@@ -42,6 +47,7 @@ import roundbracket.token.StringIsSetToken;
 import roundbracket.token.StringIsFloatToken;
 import roundbracket.token.StringToFloatToken;
 import roundbracket.token.StringToIntToken;
+import roundbracket.token.SubtractIntToken;
 import roundbracket.token.TenToken;
 import roundbracket.token.ThreeToken;
 import roundbracket.token.Token;
@@ -589,6 +595,78 @@ public class TokenizerTest
         List<Token> tokens = tokenizer.tokenize("or");
         List<Token> expectedTokens = new ArrayList<Token>();
         expectedTokens.add(new OrToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesMinusInt()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("minus_int");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new MinusIntToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesAddInt()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("add_int");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new AddIntToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesSubtractInt()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("subtract_int");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new SubtractIntToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesMultiplyInt()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("multiply_int");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new MultiplyIntToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesDivideInt()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("divide_int");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new DivideIntToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesModInt()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("mod_int");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new ModIntToken());
 
         assertEquals(expectedTokens, tokens);
     }
