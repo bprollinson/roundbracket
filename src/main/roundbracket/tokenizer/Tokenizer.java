@@ -1,18 +1,22 @@
 package roundbracket.tokenizer;
 
+import roundbracket.token.AddFloatToken;
 import roundbracket.token.AddIntToken;
 import roundbracket.token.AndToken;
 import roundbracket.token.BoolIsSetToken;
+import roundbracket.token.CeilingToken;
 import roundbracket.token.CharIsSetToken;
 import roundbracket.token.CharToIntToken;
 import roundbracket.token.CharToStringToken;
 import roundbracket.token.CloseParenToken;
+import roundbracket.token.DivideFloatToken;
 import roundbracket.token.DivideIntToken;
 import roundbracket.token.EightToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
 import roundbracket.token.FloatIsSetToken;
 import roundbracket.token.FloatToStringToken;
+import roundbracket.token.FloorToken;
 import roundbracket.token.FourToken;
 import roundbracket.token.GetBoolToken;
 import roundbracket.token.GetCharToken;
@@ -24,14 +28,17 @@ import roundbracket.token.IntIsSetToken;
 import roundbracket.token.IntToCharToken;
 import roundbracket.token.IntToFloatToken;
 import roundbracket.token.IntToStringToken;
+import roundbracket.token.MinusFloatToken;
 import roundbracket.token.MinusIntToken;
 import roundbracket.token.ModIntToken;
+import roundbracket.token.MultiplyFloatToken;
 import roundbracket.token.MultiplyIntToken;
 import roundbracket.token.NineToken;
 import roundbracket.token.NotToken;
 import roundbracket.token.OneToken;
 import roundbracket.token.OpenParenToken;
 import roundbracket.token.OrToken;
+import roundbracket.token.RoundToken;
 import roundbracket.token.SetBoolToken;
 import roundbracket.token.SetCharToken;
 import roundbracket.token.SetFloatToken;
@@ -44,6 +51,7 @@ import roundbracket.token.StringIsIntToken;
 import roundbracket.token.StringIsSetToken;
 import roundbracket.token.StringToFloatToken;
 import roundbracket.token.StringToIntToken;
+import roundbracket.token.SubtractFloatToken;
 import roundbracket.token.SubtractIntToken;
 import roundbracket.token.TenToken;
 import roundbracket.token.ThreeToken;
@@ -235,6 +243,30 @@ public class Tokenizer
                     break;
                 case "mod_int":
                     tokenList.add(new ModIntToken());
+                    break;
+                case "minus_float":
+                    tokenList.add(new MinusFloatToken());
+                    break;
+                case "add_float":
+                    tokenList.add(new AddFloatToken());
+                    break;
+                case "subtract_float":
+                    tokenList.add(new SubtractFloatToken());
+                    break;
+                case "multiply_float":
+                    tokenList.add(new MultiplyFloatToken());
+                    break;
+                case "divide_float":
+                    tokenList.add(new DivideFloatToken());
+                    break;
+                case "floor":
+                    tokenList.add(new FloorToken());
+                    break;
+                case "round":
+                    tokenList.add(new RoundToken());
+                    break;
+                case "ceiling":
+                    tokenList.add(new CeilingToken());
                     break;
             }
         }
