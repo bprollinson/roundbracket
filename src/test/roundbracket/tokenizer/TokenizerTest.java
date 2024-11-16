@@ -3,19 +3,23 @@ package roundbracket.tokenizer;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+import roundbracket.token.AddFloatToken;
 import roundbracket.token.AddIntToken;
 import roundbracket.token.AndToken;
 import roundbracket.token.BoolIsSetToken;
+import roundbracket.token.CeilingToken;
 import roundbracket.token.CharIsSetToken;
 import roundbracket.token.CharToIntToken;
 import roundbracket.token.CharToStringToken;
 import roundbracket.token.CloseParenToken;
+import roundbracket.token.DivideFloatToken;
 import roundbracket.token.DivideIntToken;
 import roundbracket.token.EightToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
 import roundbracket.token.FloatIsSetToken;
 import roundbracket.token.FloatToStringToken;
+import roundbracket.token.FloorToken;
 import roundbracket.token.FourToken;
 import roundbracket.token.GetBoolToken;
 import roundbracket.token.GetCharToken;
@@ -27,14 +31,17 @@ import roundbracket.token.IntIsSetToken;
 import roundbracket.token.IntToCharToken;
 import roundbracket.token.IntToFloatToken;
 import roundbracket.token.IntToStringToken;
+import roundbracket.token.MinusFloatToken;
 import roundbracket.token.MinusIntToken;
 import roundbracket.token.ModIntToken;
+import roundbracket.token.MultiplyFloatToken;
 import roundbracket.token.MultiplyIntToken;
 import roundbracket.token.NineToken;
 import roundbracket.token.NotToken;
 import roundbracket.token.OneToken;
 import roundbracket.token.OpenParenToken;
 import roundbracket.token.OrToken;
+import roundbracket.token.RoundToken;
 import roundbracket.token.SetBoolToken;
 import roundbracket.token.SetCharToken;
 import roundbracket.token.SetFloatToken;
@@ -47,6 +54,7 @@ import roundbracket.token.StringIsSetToken;
 import roundbracket.token.StringIsFloatToken;
 import roundbracket.token.StringToFloatToken;
 import roundbracket.token.StringToIntToken;
+import roundbracket.token.SubtractFloatToken;
 import roundbracket.token.SubtractIntToken;
 import roundbracket.token.TenToken;
 import roundbracket.token.ThreeToken;
@@ -667,6 +675,102 @@ public class TokenizerTest
         List<Token> tokens = tokenizer.tokenize("mod_int");
         List<Token> expectedTokens = new ArrayList<Token>();
         expectedTokens.add(new ModIntToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesMinusFloat()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("minus_float");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new MinusFloatToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesAddFloat()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("add_float");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new AddFloatToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesSubtractFloat()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("subtract_float");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new SubtractFloatToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesMultiplyFloat()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("multiply_float");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new MultiplyFloatToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesDivideFloat()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("divide_float");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new DivideFloatToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesFloor()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("floor");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new FloorToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesRound()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("round");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new RoundToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesCeiling()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("ceiling");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new CeilingToken());
 
         assertEquals(expectedTokens, tokens);
     }
