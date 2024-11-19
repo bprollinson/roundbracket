@@ -11,10 +11,13 @@ import roundbracket.token.CeilingToken;
 import roundbracket.token.CharIsSetToken;
 import roundbracket.token.CharToIntToken;
 import roundbracket.token.CharToStringToken;
+import roundbracket.token.ConcatCharToken;
+import roundbracket.token.ConcatStrToken;
 import roundbracket.token.CloseParenToken;
 import roundbracket.token.DivideFloatToken;
 import roundbracket.token.DivideIntToken;
 import roundbracket.token.EightToken;
+import roundbracket.token.EmptyStrToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
 import roundbracket.token.FloatIsSetToken;
@@ -49,11 +52,13 @@ import roundbracket.token.SetIntToken;
 import roundbracket.token.SetStringToken;
 import roundbracket.token.SevenToken;
 import roundbracket.token.SixToken;
+import roundbracket.token.StrCharToken;
 import roundbracket.token.StringIsIntToken;
 import roundbracket.token.StringIsSetToken;
 import roundbracket.token.StringIsFloatToken;
 import roundbracket.token.StringToFloatToken;
 import roundbracket.token.StringToIntToken;
+import roundbracket.token.StrLengthToken;
 import roundbracket.token.SubtractFloatToken;
 import roundbracket.token.SubtractIntToken;
 import roundbracket.token.TenToken;
@@ -771,6 +776,66 @@ public class TokenizerTest
         List<Token> tokens = tokenizer.tokenize("ceiling");
         List<Token> expectedTokens = new ArrayList<Token>();
         expectedTokens.add(new CeilingToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesEmptyStr()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("empty_str");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new EmptyStrToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesStrLength()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("str_length");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new StrLengthToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesConcatStr()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("concat_str");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new ConcatStrToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesConcatChar()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("concat_char");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new ConcatCharToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesStrChar()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("str_char");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new StrCharToken());
 
         assertEquals(expectedTokens, tokens);
     }
