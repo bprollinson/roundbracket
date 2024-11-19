@@ -8,10 +8,13 @@ import roundbracket.token.CeilingToken;
 import roundbracket.token.CharIsSetToken;
 import roundbracket.token.CharToIntToken;
 import roundbracket.token.CharToStringToken;
+import roundbracket.token.ConcatCharToken;
+import roundbracket.token.ConcatStrToken;
 import roundbracket.token.CloseParenToken;
 import roundbracket.token.DivideFloatToken;
 import roundbracket.token.DivideIntToken;
 import roundbracket.token.EightToken;
+import roundbracket.token.EmptyStrToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
 import roundbracket.token.FloatIsSetToken;
@@ -46,11 +49,13 @@ import roundbracket.token.SetIntToken;
 import roundbracket.token.SetStringToken;
 import roundbracket.token.SevenToken;
 import roundbracket.token.SixToken;
+import roundbracket.token.StrCharToken;
 import roundbracket.token.StringIsFloatToken;
 import roundbracket.token.StringIsIntToken;
 import roundbracket.token.StringIsSetToken;
 import roundbracket.token.StringToFloatToken;
 import roundbracket.token.StringToIntToken;
+import roundbracket.token.StrLengthToken;
 import roundbracket.token.SubtractFloatToken;
 import roundbracket.token.SubtractIntToken;
 import roundbracket.token.TenToken;
@@ -267,6 +272,21 @@ public class Tokenizer
                     break;
                 case "ceiling":
                     tokenList.add(new CeilingToken());
+                    break;
+                case "empty_str":
+                    tokenList.add(new EmptyStrToken());
+                    break;
+                case "str_length":
+                    tokenList.add(new StrLengthToken());
+                    break;
+                case "concat_str":
+                    tokenList.add(new ConcatStrToken());
+                    break;
+                case "concat_char":
+                    tokenList.add(new ConcatCharToken());
+                    break;
+                case "str_char":
+                    tokenList.add(new StrCharToken());
                     break;
             }
         }
