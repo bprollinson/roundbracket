@@ -14,7 +14,10 @@ import roundbracket.token.CloseParenToken;
 import roundbracket.token.DivideFloatToken;
 import roundbracket.token.DivideIntToken;
 import roundbracket.token.EightToken;
+import roundbracket.token.ElseIfToken;
+import roundbracket.token.ElseToken;
 import roundbracket.token.EmptyStrToken;
+import roundbracket.token.EndIfToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
 import roundbracket.token.FloatIsSetToken;
@@ -26,6 +29,7 @@ import roundbracket.token.GetCharToken;
 import roundbracket.token.GetFloatToken;
 import roundbracket.token.GetIntToken;
 import roundbracket.token.GetStringToken;
+import roundbracket.token.IfToken;
 import roundbracket.token.IntIsCharToken;
 import roundbracket.token.IntIsSetToken;
 import roundbracket.token.IntToCharToken;
@@ -287,6 +291,18 @@ public class Tokenizer
                     break;
                 case "str_char":
                     tokenList.add(new StrCharToken());
+                    break;
+                case "if":
+                    tokenList.add(new IfToken());
+                    break;
+                case "else_if":
+                    tokenList.add(new ElseIfToken());
+                    break;
+                case "else":
+                    tokenList.add(new ElseToken());
+                    break;
+                case "end_if":
+                    tokenList.add(new EndIfToken());
                     break;
             }
         }
