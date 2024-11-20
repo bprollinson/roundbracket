@@ -17,7 +17,10 @@ import roundbracket.token.CloseParenToken;
 import roundbracket.token.DivideFloatToken;
 import roundbracket.token.DivideIntToken;
 import roundbracket.token.EightToken;
+import roundbracket.token.ElseIfToken;
+import roundbracket.token.ElseToken;
 import roundbracket.token.EmptyStrToken;
+import roundbracket.token.EndIfToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
 import roundbracket.token.FloatIsSetToken;
@@ -29,6 +32,7 @@ import roundbracket.token.GetCharToken;
 import roundbracket.token.GetFloatToken;
 import roundbracket.token.GetIntToken;
 import roundbracket.token.GetStringToken;
+import roundbracket.token.IfToken;
 import roundbracket.token.IntIsCharToken;
 import roundbracket.token.IntIsSetToken;
 import roundbracket.token.IntToCharToken;
@@ -836,6 +840,54 @@ public class TokenizerTest
         List<Token> tokens = tokenizer.tokenize("str_char");
         List<Token> expectedTokens = new ArrayList<Token>();
         expectedTokens.add(new StrCharToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesIf()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("if");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new IfToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesElseIf()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("else_if");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new ElseIfToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesElse()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("else");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new ElseToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesEndIf()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("end_if");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new EndIfToken());
 
         assertEquals(expectedTokens, tokens);
     }
