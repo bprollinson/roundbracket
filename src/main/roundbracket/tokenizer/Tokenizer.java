@@ -96,6 +96,11 @@ public class Tokenizer
             {
                 tokenList.add(new CloseParenToken());
             }
+            else if (character == ' ')
+            {
+                this.parseMultiCharacterToken(buffer, tokenList);
+                buffer = "";
+            }
             else
             {
                 buffer += character;
