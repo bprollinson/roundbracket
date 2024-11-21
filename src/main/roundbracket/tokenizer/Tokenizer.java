@@ -46,6 +46,8 @@ import roundbracket.token.NotToken;
 import roundbracket.token.OneToken;
 import roundbracket.token.OpenParenToken;
 import roundbracket.token.OrToken;
+import roundbracket.token.PrintStringToken;
+import roundbracket.token.ReadStringToken;
 import roundbracket.token.RoundToken;
 import roundbracket.token.SetBoolToken;
 import roundbracket.token.SetCharToken;
@@ -311,6 +313,12 @@ public class Tokenizer
                     break;
                 case "end_while":
                     tokenList.add(new EndWhileToken());
+                    break;
+                case "print_string":
+                    tokenList.add(new PrintStringToken());
+                    break;
+                 case "read_string":
+                    tokenList.add(new ReadStringToken());
                     break;
             }
         }
