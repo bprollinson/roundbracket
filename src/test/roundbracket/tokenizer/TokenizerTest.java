@@ -21,6 +21,7 @@ import roundbracket.token.ElseIfToken;
 import roundbracket.token.ElseToken;
 import roundbracket.token.EmptyStrToken;
 import roundbracket.token.EndIfToken;
+import roundbracket.token.EndWhileToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
 import roundbracket.token.FloatIsSetToken;
@@ -70,6 +71,7 @@ import roundbracket.token.ThreeToken;
 import roundbracket.token.Token;
 import roundbracket.token.TrueToken;
 import roundbracket.token.TwoToken;
+import roundbracket.token.WhileToken;
 import roundbracket.token.ZeroToken;
 
 import java.util.ArrayList;
@@ -888,6 +890,30 @@ public class TokenizerTest
         List<Token> tokens = tokenizer.tokenize("end_if");
         List<Token> expectedTokens = new ArrayList<Token>();
         expectedTokens.add(new EndIfToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesWhile()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("while");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new WhileToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesEndWhile()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("end_while");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new EndWhileToken());
 
         assertEquals(expectedTokens, tokens);
     }
