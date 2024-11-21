@@ -49,6 +49,8 @@ import roundbracket.token.NotToken;
 import roundbracket.token.OneToken;
 import roundbracket.token.OpenParenToken;
 import roundbracket.token.OrToken;
+import roundbracket.token.PrintStringToken;
+import roundbracket.token.ReadStringToken;
 import roundbracket.token.RoundToken;
 import roundbracket.token.SetBoolToken;
 import roundbracket.token.SetCharToken;
@@ -914,6 +916,30 @@ public class TokenizerTest
         List<Token> tokens = tokenizer.tokenize("end_while");
         List<Token> expectedTokens = new ArrayList<Token>();
         expectedTokens.add(new EndWhileToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesPrintString()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("print_string");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new PrintStringToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesReadString()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("read_string");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new ReadStringToken());
 
         assertEquals(expectedTokens, tokens);
     }
