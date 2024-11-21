@@ -18,6 +18,7 @@ import roundbracket.token.ElseIfToken;
 import roundbracket.token.ElseToken;
 import roundbracket.token.EmptyStrToken;
 import roundbracket.token.EndIfToken;
+import roundbracket.token.EndWhileToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
 import roundbracket.token.FloatIsSetToken;
@@ -67,6 +68,7 @@ import roundbracket.token.ThreeToken;
 import roundbracket.token.Token;
 import roundbracket.token.TrueToken;
 import roundbracket.token.TwoToken;
+import roundbracket.token.WhileToken;
 import roundbracket.token.ZeroToken;
 
 import java.util.ArrayList;
@@ -303,6 +305,12 @@ public class Tokenizer
                     break;
                 case "end_if":
                     tokenList.add(new EndIfToken());
+                    break;
+                case "while":
+                    tokenList.add(new WhileToken());
+                    break;
+                case "end_while":
+                    tokenList.add(new EndWhileToken());
                     break;
             }
         }
