@@ -960,11 +960,26 @@ public class TokenizerTest
     }
 
     @Test
-    public void testTokenizeTokenizesMultipleMultiCharacterTokens()
+    public void testTokenizeTokenizesMultipleMultiCharacterTokensSeparatedBySpaces()
     {
         Tokenizer tokenizer = new Tokenizer();
 
         List<Token> tokens = tokenizer.tokenize("true false zero one");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new TrueToken());
+        expectedTokens.add(new FalseToken());
+        expectedTokens.add(new ZeroToken());
+        expectedTokens.add(new OneToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesMultipleMultiCharacterTokensSeparatedByTabs()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("true\tfalse\tzero\tone");
         List<Token> expectedTokens = new ArrayList<Token>();
         expectedTokens.add(new TrueToken());
         expectedTokens.add(new FalseToken());
