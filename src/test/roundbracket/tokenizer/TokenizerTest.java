@@ -960,6 +960,66 @@ public class TokenizerTest
     }
 
     @Test
+    public void testTokenizeTokenizesMultipleParenthesesSeparatedBySpaces()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("( ( ) )");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new OpenParenToken());
+        expectedTokens.add(new OpenParenToken());
+        expectedTokens.add(new CloseParenToken());
+        expectedTokens.add(new CloseParenToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesMultipleParenthesesSeparatedByTabs()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("(\t(\t)\t)");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new OpenParenToken());
+        expectedTokens.add(new OpenParenToken());
+        expectedTokens.add(new CloseParenToken());
+        expectedTokens.add(new CloseParenToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesMultipleParenthesesSeparatedByCarriageReturns()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("(\r(\r)\r)");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new OpenParenToken());
+        expectedTokens.add(new OpenParenToken());
+        expectedTokens.add(new CloseParenToken());
+        expectedTokens.add(new CloseParenToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesMultipleParenthesesSeparatedByLineFeeds()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("(\n(\n)\n)");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new OpenParenToken());
+        expectedTokens.add(new OpenParenToken());
+        expectedTokens.add(new CloseParenToken());
+        expectedTokens.add(new CloseParenToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
     public void testTokenizeIgnoresWhitespacePrefixBeforeParenthesisToken()
     {
         Tokenizer tokenizer = new Tokenizer();
