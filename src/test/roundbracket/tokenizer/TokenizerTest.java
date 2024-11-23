@@ -960,7 +960,7 @@ public class TokenizerTest
     }
 
     @Test
-    public void testTokenizeIgnoresWhitespacePrefixBeforeSingleCharacterToken()
+    public void testTokenizeIgnoresWhitespacePrefixBeforeParenthesisToken()
     {
         Tokenizer tokenizer = new Tokenizer();
 
@@ -972,7 +972,7 @@ public class TokenizerTest
     }
 
     @Test
-    public void testTokenizeIgnoresWhitespaceSuffixAfterSingleCharacterToken()
+    public void testTokenizeIgnoresWhitespaceSuffixAfterParenthesisToken()
     {
         Tokenizer tokenizer = new Tokenizer();
 
