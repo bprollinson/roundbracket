@@ -960,6 +960,30 @@ public class TokenizerTest
     }
 
     @Test
+    public void testTokenizeIgnoresWhitespacePrefixBeforeSingleCharacterToken()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize(" \t\r\n(");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new OpenParenToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeIgnoresWhitespaceSuffixAfterSingleCharacterToken()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("( \t\r\n");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new OpenParenToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
     public void testTokenizeTokenizesMultipleMultiCharacterTokensSeparatedBySpaces()
     {
         Tokenizer tokenizer = new Tokenizer();
@@ -1015,6 +1039,30 @@ public class TokenizerTest
         expectedTokens.add(new FalseToken());
         expectedTokens.add(new ZeroToken());
         expectedTokens.add(new OneToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeIgnoresWhitespacePrefixBeforeMultiCharacterToken()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize(" \t\r\ntrue");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new TrueToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeIgnoresWhitespaceSuffixAfterMultiCharacterToken()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("true \t\r\n");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new TrueToken());
 
         assertEquals(expectedTokens, tokens);
     }
