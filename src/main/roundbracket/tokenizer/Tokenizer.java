@@ -100,7 +100,7 @@ public class Tokenizer
                 buffer = "";
                 tokenList.add(new CloseParenToken());
             }
-            else if (character == ' ' || character == '\t' || character == '\r' || character == '\n')
+            else if (this.characterIsWhitespace(character))
             {
                 this.parseMultiCharacterToken(buffer, tokenList);
                 buffer = "";
@@ -114,6 +114,11 @@ public class Tokenizer
         this.parseMultiCharacterToken(buffer, tokenList);
 
         return tokenList;
+    }
+
+    private boolean characterIsWhitespace(char character)
+    {
+        return character == ' ' || character == '\t' || character == '\r' || character == '\n';
     }
 
     private void parseMultiCharacterToken(String buffer, List<Token> tokenList)
