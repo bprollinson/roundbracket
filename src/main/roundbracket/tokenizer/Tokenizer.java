@@ -90,10 +90,14 @@ public class Tokenizer
             char character = input.charAt(i);
             if (character == '(')
             {
+                this.parseMultiCharacterToken(buffer, tokenList);
+                buffer = "";
                 tokenList.add(new OpenParenToken());
             }
             else if (character == ')')
             {
+                this.parseMultiCharacterToken(buffer, tokenList);
+                buffer = "";
                 tokenList.add(new CloseParenToken());
             }
             else if (character == ' ' || character == '\t' || character == '\r' || character == '\n')
