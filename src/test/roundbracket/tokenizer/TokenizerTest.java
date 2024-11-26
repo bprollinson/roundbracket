@@ -1126,4 +1126,56 @@ public class TokenizerTest
 
         assertEquals(expectedTokens, tokens);
     }
+
+    @Test
+    public void testTokenizeTokenizesOpenParenthesisBeforeMultiCharacterToken()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("(true");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new OpenParenToken());
+        expectedTokens.add(new TrueToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesCloseParenthesisBeforeMultiCharacterToken()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize(")true");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new CloseParenToken());
+        expectedTokens.add(new TrueToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesMultiCharacterTokenBeforeOpenParenthesis()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("true(");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new TrueToken());
+        expectedTokens.add(new OpenParenToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesMultiCharacterTokenBeforeCloseParenthesis()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("true)");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new TrueToken());
+        expectedTokens.add(new CloseParenToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
 }
