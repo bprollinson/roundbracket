@@ -1178,4 +1178,30 @@ public class TokenizerTest
 
         assertEquals(expectedTokens, tokens);
     }
+
+    @Test
+    public void testTokenizeTokenizesMultiCharacterTokenBeforeOpenParenthesisWithWitespaceBetween()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("true \t\r\n(");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new TrueToken());
+        expectedTokens.add(new OpenParenToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
+    public void testTokenizeTokenizesMultiCharacterTokenBeforeCloseParenthesisWithWhitespaceBetween()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize("true \t\r\n)");
+        List<Token> expectedTokens = new ArrayList<Token>();
+        expectedTokens.add(new TrueToken());
+        expectedTokens.add(new CloseParenToken());
+
+        assertEquals(expectedTokens, tokens);
+    }
 }
