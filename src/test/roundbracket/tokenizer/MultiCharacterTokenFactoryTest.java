@@ -5,10 +5,13 @@ import org.junit.jupiter.api.Test;
 
 import roundbracket.token.BoolIsSetToken;
 import roundbracket.token.CharIsSetToken;
+import roundbracket.token.CharToIntToken;
+import roundbracket.token.CharToStringToken;
 import roundbracket.token.EightToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
 import roundbracket.token.FloatIsSetToken;
+import roundbracket.token.FloatToStringToken;
 import roundbracket.token.FourToken;
 import roundbracket.token.GetBoolToken;
 import roundbracket.token.GetCharToken;
@@ -16,6 +19,10 @@ import roundbracket.token.GetFloatToken;
 import roundbracket.token.GetIntToken;
 import roundbracket.token.GetStringToken;
 import roundbracket.token.IntIsSetToken;
+import roundbracket.token.IntIsCharToken;
+import roundbracket.token.IntToCharToken;
+import roundbracket.token.IntToFloatToken;
+import roundbracket.token.IntToStringToken;
 import roundbracket.token.NineToken;
 import roundbracket.token.OneToken;
 import roundbracket.token.SevenToken;
@@ -25,7 +32,11 @@ import roundbracket.token.SetFloatToken;
 import roundbracket.token.SetIntToken;
 import roundbracket.token.SetStringToken;
 import roundbracket.token.SixToken;
+import roundbracket.token.StringIsFloatToken;
+import roundbracket.token.StringIsIntToken;
 import roundbracket.token.StringIsSetToken;
+import roundbracket.token.StringToFloatToken;
+import roundbracket.token.StringToIntToken;
 import roundbracket.token.TenToken;
 import roundbracket.token.ThreeToken;
 import roundbracket.token.Token;
@@ -339,6 +350,127 @@ public class MultiCharacterTokenFactoryTest
 
         Token token = tokenFactory.createToken("string_is_set");
         Token expectedToken = new StringIsSetToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesIntToFloatToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("int_to_float");
+        Token expectedToken = new IntToFloatToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesIntIsCharToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("int_is_char");
+        Token expectedToken = new IntIsCharToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesIntToCharToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("int_to_char");
+        Token expectedToken = new IntToCharToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesIntToStringToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("int_to_string");
+        Token expectedToken = new IntToStringToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesFloatToStringToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("float_to_string");
+        Token expectedToken = new FloatToStringToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesCharToIntToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("char_to_int");
+        Token expectedToken = new CharToIntToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesCharToStringToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("char_to_string");
+        Token expectedToken = new CharToStringToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesStringIsIntToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("string_is_int");
+        Token expectedToken = new StringIsIntToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesStringToIntToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("string_to_int");
+        Token expectedToken = new StringToIntToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesStringIsFloatToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("string_is_float");
+        Token expectedToken = new StringIsFloatToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesStringToFloatToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("string_to_float");
+        Token expectedToken = new StringToFloatToken();
 
         assertEquals(expectedToken, token);
     }
