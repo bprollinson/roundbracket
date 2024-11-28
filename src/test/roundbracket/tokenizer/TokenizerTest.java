@@ -960,6 +960,17 @@ public class TokenizerTest
     }
 
     @Test
+    public void testTokenizeTokenizesWhitespaceString()
+    {
+        Tokenizer tokenizer = new Tokenizer();
+
+        List<Token> tokens = tokenizer.tokenize(" \t\r\n");
+        List<Token> expectedTokens = new ArrayList<Token>();
+
+        assertEquals(expectedTokens, tokens);
+    }
+
+    @Test
     public void testTokenizeTokenizesMultipleParenthesesSeparatedBySpaces()
     {
         Tokenizer tokenizer = new Tokenizer();
