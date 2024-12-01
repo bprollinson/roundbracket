@@ -3,6 +3,7 @@ package roundbracket.tokenizer;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+import roundbracket.token.AndToken;
 import roundbracket.token.BoolIsSetToken;
 import roundbracket.token.CharIsSetToken;
 import roundbracket.token.CharToIntToken;
@@ -24,7 +25,9 @@ import roundbracket.token.IntToCharToken;
 import roundbracket.token.IntToFloatToken;
 import roundbracket.token.IntToStringToken;
 import roundbracket.token.NineToken;
+import roundbracket.token.NotToken;
 import roundbracket.token.OneToken;
+import roundbracket.token.OrToken;
 import roundbracket.token.SevenToken;
 import roundbracket.token.SetBoolToken;
 import roundbracket.token.SetCharToken;
@@ -471,6 +474,39 @@ public class MultiCharacterTokenFactoryTest
 
         Token token = tokenFactory.createToken("string_to_float");
         Token expectedToken = new StringToFloatToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesAndToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("and");
+        Token expectedToken = new AndToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesOrToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("or");
+        Token expectedToken = new OrToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesNotToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("not");
+        Token expectedToken = new NotToken();
 
         assertEquals(expectedToken, token);
     }
