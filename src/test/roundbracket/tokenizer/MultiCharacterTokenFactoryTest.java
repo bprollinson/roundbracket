@@ -3,18 +3,22 @@ package roundbracket.tokenizer;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+import roundbracket.token.AddFloatToken;
 import roundbracket.token.AddIntToken;
 import roundbracket.token.AndToken;
 import roundbracket.token.BoolIsSetToken;
+import roundbracket.token.CeilingToken;
 import roundbracket.token.CharIsSetToken;
 import roundbracket.token.CharToIntToken;
 import roundbracket.token.CharToStringToken;
+import roundbracket.token.DivideFloatToken;
 import roundbracket.token.DivideIntToken;
 import roundbracket.token.EightToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
 import roundbracket.token.FloatIsSetToken;
 import roundbracket.token.FloatToStringToken;
+import roundbracket.token.FloorToken;
 import roundbracket.token.FourToken;
 import roundbracket.token.GetBoolToken;
 import roundbracket.token.GetCharToken;
@@ -26,13 +30,16 @@ import roundbracket.token.IntIsCharToken;
 import roundbracket.token.IntToCharToken;
 import roundbracket.token.IntToFloatToken;
 import roundbracket.token.IntToStringToken;
+import roundbracket.token.MinusFloatToken;
 import roundbracket.token.MinusIntToken;
 import roundbracket.token.ModIntToken;
+import roundbracket.token.MultiplyFloatToken;
 import roundbracket.token.MultiplyIntToken;
 import roundbracket.token.NineToken;
 import roundbracket.token.NotToken;
 import roundbracket.token.OneToken;
 import roundbracket.token.OrToken;
+import roundbracket.token.RoundToken;
 import roundbracket.token.SevenToken;
 import roundbracket.token.SetBoolToken;
 import roundbracket.token.SetCharToken;
@@ -45,6 +52,7 @@ import roundbracket.token.StringIsIntToken;
 import roundbracket.token.StringIsSetToken;
 import roundbracket.token.StringToFloatToken;
 import roundbracket.token.StringToIntToken;
+import roundbracket.token.SubtractFloatToken;
 import roundbracket.token.SubtractIntToken;
 import roundbracket.token.TenToken;
 import roundbracket.token.ThreeToken;
@@ -579,6 +587,94 @@ public class MultiCharacterTokenFactoryTest
 
         Token token = tokenFactory.createToken("mod_int");
         Token expectedToken = new ModIntToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesMinusFloatToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("minus_float");
+        Token expectedToken = new MinusFloatToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesAddFloatToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("add_float");
+        Token expectedToken = new AddFloatToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesSubtractFloatToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("subtract_float");
+        Token expectedToken = new SubtractFloatToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesMultiplyFloatToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("multiply_float");
+        Token expectedToken = new MultiplyFloatToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesDivideFloatToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("divide_float");
+        Token expectedToken = new DivideFloatToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesFloorToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("floor");
+        Token expectedToken = new FloorToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesRoundToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("round");
+        Token expectedToken = new RoundToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesCeilingToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("ceiling");
+        Token expectedToken = new CeilingToken();
 
         assertEquals(expectedToken, token);
     }
