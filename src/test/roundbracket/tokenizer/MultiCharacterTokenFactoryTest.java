@@ -11,9 +11,11 @@ import roundbracket.token.CeilingToken;
 import roundbracket.token.CharIsSetToken;
 import roundbracket.token.CharToIntToken;
 import roundbracket.token.CharToStringToken;
+import roundbracket.token.ConcatCharToken;
 import roundbracket.token.DivideFloatToken;
 import roundbracket.token.DivideIntToken;
 import roundbracket.token.EightToken;
+import roundbracket.token.EmptyStrToken;
 import roundbracket.token.FalseToken;
 import roundbracket.token.FiveToken;
 import roundbracket.token.FloatIsSetToken;
@@ -50,6 +52,8 @@ import roundbracket.token.SixToken;
 import roundbracket.token.StringIsFloatToken;
 import roundbracket.token.StringIsIntToken;
 import roundbracket.token.StringIsSetToken;
+import roundbracket.token.StrCharToken;
+import roundbracket.token.StrLengthToken;
 import roundbracket.token.StringToFloatToken;
 import roundbracket.token.StringToIntToken;
 import roundbracket.token.SubtractFloatToken;
@@ -675,6 +679,50 @@ public class MultiCharacterTokenFactoryTest
 
         Token token = tokenFactory.createToken("ceiling");
         Token expectedToken = new CeilingToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesEmptyStrToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("empty_str");
+        Token expectedToken = new EmptyStrToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesStrLengthToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("str_length");
+        Token expectedToken = new StrLengthToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesConcatCharToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("concat_char");
+        Token expectedToken = new ConcatCharToken();
+
+        assertEquals(expectedToken, token);
+    }
+
+    @Test
+    public void testCreateTokenCreatesStrCharToken()
+    {
+        MultiCharacterTokenFactory tokenFactory = new MultiCharacterTokenFactory();
+
+        Token token = tokenFactory.createToken("str_char");
+        Token expectedToken = new StrCharToken();
 
         assertEquals(expectedToken, token);
     }
